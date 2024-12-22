@@ -65,10 +65,13 @@
   </div>
 
   <div class="container my-5">
+
     <div class="row">
-      <div class="col-lg-6 d-flex">
-        <h3 class="align-self-center text-right px-4 b-app-info">Attendance Monitoring System for Participants of the
-          Video Conference arranged by NIC Himachal Predesh State and District Centres</h3>
+
+      <div class="col-lg-6 ">
+        <img src="images/vc.png" alt="NIC logo" style="width: 550px; height: 300px;">
+        <h4 class="align-self-center text-right px-4 b-app-info">Attendance Monitoring System for Participants of the
+          Video Conference arranged by NIC Himachal Predesh State and District Centres</h4>
       </div>
 
       <div class="col-lg-6 px-5 b-login-form" style="border-left: 1px solid #999;">
@@ -101,9 +104,10 @@
               <label for="captcha" class="form-label">
                 <b>{{ __('What is ') . $num1 . ' + ' . $num2 . '?' }}</b>
               </label>
-              <input type="text" class="form-control @error('captcha') is-invalid @enderror" id="captcha" name="captcha"
-                placeholder="enter captcha" required>
 
+              <input type="text" class=" form-control @error('captcha') is-invalid @enderror" id="captcha"
+                name="captcha" placeholder="enter captcha" required>
+              <span class="b-bottom-line"></span>
               @error('captcha')
           <style>
           #captcha {
