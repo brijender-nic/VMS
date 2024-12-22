@@ -79,29 +79,50 @@
 
         <!-- Modal body -->
         <div>
-          <form action="dashboard-consumed.html" autocomplete="off" method="POST">
+
+
+
+          <form action="{{ route('login.submit') }}" method="POST" autocomplete="off">
+            @csrf <!-- Add CSRF Token for security -->
             <div class="form-group">
               <label for="login-email"><b>Email:</b></label>
-              <input type="email" class="form-control" id="login-email" placeholder="Enter email" name="login-email">
+              <input type="email" class="form-control" id="login-email" placeholder="Enter email" name="email" required>
               <span class="b-bottom-line"></span>
             </div>
             <div class="form-group">
               <label for="login-pwd"><b>Password:</b></label>
-              <input type="password" class="form-control" id="login-pwd" placeholder="Enter password" name="login-pwd">
+              <input type="password" class="form-control" id="login-pwd" placeholder="Enter password" name="password"
+                required>
               <span class="b-bottom-line"></span>
             </div>
-            <!-- <div class="form-group form-check">
-							<label class="form-check-label">
-							<input class="form-check-input" type="checkbox" name="remember"> Remember me
-							</label>
-						</div> -->
+
+            <!-- Math CAPTCHA -->
+            <div class="mb-3">
+              <label for="captcha" class="form-label">
+                <b>{{ __('What is ') . $num1 . ' + ' . $num2 . '?' }}</b>
+              </label>
+              <input type="text" class="form-control @error('captcha') is-invalid @enderror" id="captcha" name="captcha"
+                placeholder="enter captcha" required>
+
+              @error('captcha')
+          <style>
+          #captcha {
+            border-color: red;
+            /* Red border to indicate error */
+            background-color: #f8d7da;
+            /* Light red background for error */
+          }
+          </style>
+        @enderror
+
+            </div>
 
             <div class="py-4">
               <button type="submit" class="btn btn-primary rounded-pill">Log In</button>
             </div>
-
-
           </form>
+
+
         </div>
       </div>
     </div>
