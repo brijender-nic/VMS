@@ -100,7 +100,7 @@
             </div>
 
             <!-- Math CAPTCHA -->
-            <div class="mb-3">
+            <div class="mb-2 mt-2">
               <label for="captcha" class="form-label">
                 <b>{{ __('What is ') . $num1 . ' + ' . $num2 . '?' }}</b>
               </label>
